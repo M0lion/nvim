@@ -63,6 +63,12 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- Airline: Status bar
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+
 	-- Plugins end
 
 	if packer_bootstrap then
