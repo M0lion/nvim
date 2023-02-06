@@ -40,4 +40,4 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- make current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("t", "<C-C>", [[<C-\><C-n>]])
+vim.keymap.set("t", "<C-Space>", [[<C-\><C-n>]])
