@@ -40,4 +40,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- make current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- Escape form terminal
 vim.keymap.set("t", "<C-Space>", [[<C-\><C-n>]])
+
+-- Ctrl + s saves
+vim.keymap.set({"n", "i", "v"}, "<C-s>", "<Esc>:wr<CR>")
