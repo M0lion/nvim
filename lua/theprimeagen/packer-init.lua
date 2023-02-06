@@ -69,6 +69,9 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
+	-- Neoformat: Autoformatting
+	use('sbdchd/neoformat')
+
 	-- Plugins end
 
 	if packer_bootstrap then
