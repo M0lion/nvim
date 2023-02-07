@@ -45,7 +45,23 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+	mapping = cmp_mappings,
+	sources = {
+		{name = 'path'},
+		{
+			name = 'nvim_lsp',
+			keyword_length = 3,
+		},
+		{
+			name = 'buffer',
+			keyword_length = 3,
+			entry_filter = function(entry, _)
+				print(entry)
+				return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+			end
+		},
+		--{name = 'luasnip', keyword_length = 2},
+	}
 })
 
 lsp.set_preferences({
