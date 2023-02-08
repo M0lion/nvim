@@ -51,3 +51,5 @@ vim.keymap.set({"i"}, "<C-q><C-w>", "()<Esc>i")
 vim.keymap.set({"i"}, "<C-q><C-e>", "{}<Esc>i")
 vim.keymap.set({"i"}, "<C-q><C-r>", "[]<Esc>i")
 vim.keymap.set({"i"}, "<C-q><C-Space>", "<Cr><Esc>O")
+
+vim.keymap.set({"i"}, "<C-w><C-r>", "><Esc>hvT<lt>yf>a<lt>/><Esc>PF<i")
