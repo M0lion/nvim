@@ -11,6 +11,7 @@ lsp.ensure_installed({
   'sumneko_lua',
   'rust_analyzer',
   'solc',
+	'tailwindcss',
 })
 
 -- Fix Undefined global 'vim'
