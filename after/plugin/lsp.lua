@@ -74,6 +74,14 @@ lsp.set_preferences({
     }
 })
 
+local function rename_file()
+	local current = vim.api.nvim_buf_get_name(0)
+	vim.ui.input({
+		prompt = "New filename: ",
+		default = current,
+	}, function(input) vim.lsp.util.rename(current, input) end)
+end
+
 lsp.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
@@ -86,6 +94,7 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>vrf", rename_file, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
