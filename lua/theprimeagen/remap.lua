@@ -47,7 +47,7 @@ vim.keymap.set("t", "<C-Space>", [[<C-\><C-n>]])
 vim.keymap.set({"n", "i", "v"}, "<C-s>", "<Esc>:wr<CR>")
 
 -- Matching brackets
-vim.keymap.set({"i"}, "<C-q><C-w>", "{<CR>}<Esc>O")
-vim.keymap.set({"i"}, "<C-q><C-e>", "()<Esc>i")
+vim.keymap.set({"i"}, "<C-q><C-w>", "()<Esc>i")
+vim.keymap.set({"i"}, "<C-q><C-e>", "{}<Esc>i")
 vim.keymap.set({"i"}, "<C-q><C-r>", "[]<Esc>i")
-vim.keymap.set({"i"}, "<C-q><C-q>", "<C-q><C-e><C-q><C-w>")
+vim.keymap.set({"i"}, "<C-q><C-Space>", "<Cr><Esc>O")
