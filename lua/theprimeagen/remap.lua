@@ -42,6 +42,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Escape form terminal
 vim.keymap.set("t", "<C-Space>", [[<C-\><C-n>]])
+vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]])
 
 -- Ctrl + s saves
 vim.keymap.set({"n", "i", "v"}, "<C-s>", "<Esc>:wr<CR>")
