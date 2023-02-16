@@ -10,7 +10,6 @@ lsp.ensure_installed({
   'tsserver',
   'sumneko_lua',
   'rust_analyzer',
-  'solc',
 	'tailwindcss',
 })
 
@@ -83,7 +82,7 @@ local function rename_file()
 	}, function(input) vim.lsp.util.rename(current, input) end)
 end
 
-lsp.on_attach(function(_, bufnr)
+local function on_attach(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -97,7 +96,9 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("n", "<leader>vrf", rename_file, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-end)
+end
+
+lsp.on_attach(on_attach)
 
 lsp.setup()
 
@@ -105,3 +106,20 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+local lspconfig = require('lspconfig')
+local configs = require('lspconfig.configs')
+local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+configs.solidity = {
+	default_config = {
+		cmd = {'nomicfoundation-solidity-language-server', '--stdio'},
+		filetypes = { 'solidity' },
+		root_dir = lspconfig.util.find_git_ancestor,
+		single_file_support = true,
+	},
+}
+
+lspconfig.solidity.setup({
+	on_attach = on_attach,
+	capabilities = lsp_capabilities,
+})

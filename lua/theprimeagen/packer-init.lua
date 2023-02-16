@@ -72,6 +72,16 @@ return require('packer').startup(function(use)
 	-- Neoformat: Autoformatting
 	use('sbdchd/neoformat')
 
+	-- Which key: shows keybinds
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup()
+		end
+	}
+
 	-- Plugins end
 
 	if packer_bootstrap then
