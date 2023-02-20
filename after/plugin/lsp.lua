@@ -124,8 +124,16 @@ lspconfig.solidity.setup({
 	capabilities = lsp_capabilities,
 })
 
-require("flutter-tools").setup {
+configs.dart = {
+	default_config = {
+		cmd = {'dart', 'language-server', '--lsp'},
+		filetypes = { 'dart' },
+		root_dir = lspconfig.util.find_git_ancestor,
+		single_file_support = true,
+	},
+}
+
+lspconfig.dart.setup({
 	on_attach = on_attach,
 	capabilities = lsp_capabilities,
-	flutter_path = "/lib/flutter/bin",
-}
+})
