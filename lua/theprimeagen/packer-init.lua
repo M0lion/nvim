@@ -82,6 +82,10 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	-- Flutter
+	use("nvim-lua/plenary.nvim")
+	use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+
 	-- Plugins end
 
 	if packer_bootstrap then

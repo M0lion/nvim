@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/bjorn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/home/bjorn/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/bjorn/.local/share/nvim/site/pack/packer/start/friendly-snippets",

@@ -123,3 +123,9 @@ lspconfig.solidity.setup({
 	on_attach = on_attach,
 	capabilities = lsp_capabilities,
 })
+
+require("flutter-tools").setup {
+	on_attach = on_attach,
+	capabilities = lsp_capabilities,
+	flutter_path = "/lib/flutter/bin",
+}
