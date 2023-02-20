@@ -13,7 +13,7 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-local home = os.getenv("HOM")
+local home = os.getenv("HOME")
 if(home == nil) then
 	home = os.getenv("UserProfile")
 end
