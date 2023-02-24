@@ -89,6 +89,9 @@ return require('packer').startup(function(use)
 	-- auto close tags
 	use("alvan/vim-closetag")
 
+	-- multicursor
+	use("mg979/vim-visual-multi")
+
 	-- Plugins end
 
 	if packer_bootstrap then
