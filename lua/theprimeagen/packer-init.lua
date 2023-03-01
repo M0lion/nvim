@@ -92,6 +92,9 @@ return require('packer').startup(function(use)
 	-- multicursor
 	use("mg979/vim-visual-multi")
 
+	-- Copilot
+	use("github/copilot.vim")
+
 	-- Plugins end
 
 	if packer_bootstrap then
