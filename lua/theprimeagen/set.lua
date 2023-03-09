@@ -33,3 +33,7 @@ vim.opt.updatetime = 50
 
 vim.cmd("colorscheme tokyonight-night")
 
+-- Copilot
+vim.g.copilot_filetypes = {
+	yaml = true,
+}
